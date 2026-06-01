@@ -1,0 +1,21 @@
+Package: SFPLSR
+Type: Package
+Title: Spatial Functional Partial Least Squares Regression
+Version: 0.1.0
+Author: Muge Mutis <muge.mutis@yildiz.edu.tr>
+Maintainer: Muge Mutis <muge.mutis@yildiz.edu.tr>
+Description: This package implements the Spatial Functional Partial Least Squares (SFPLS) framework for spatial autoregressive scalar-on-function regression modeling, integrating spatial dependence into the dimension reduction stage.
+License: GPL-3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Depends: 
+    R (>= 3.5)
+LazyData: true
+Imports: 
+    expm,
+    fda,
+    fda.usc,
+    MASS,
+    stats
+
