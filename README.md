@@ -1,10 +1,12 @@
 
-SFPLSR
+### SFPLSR
 
-The goal of SFPLSR is to provide a comprehensive framework for spatial
-functional partial least squares regression.
+The **SFPLSR** package provides a comprehensive framework for spatial
+functional partial least squares regression. It is designed for modeling
+scalar-on-function regression problems in the presence of spatial
+dependence.
 
-Abstract
+## Abstract
 
 This study proposes a spatial functional partial least squares framework
 for estimating a spatial autoregressive scalar-on-function regression
@@ -13,63 +15,81 @@ infinite-dimensional. The method embeds spatial dependence into the
 dimension reduction process by constructing latent components that
 maximize the covariance between the scalar response and the functional
 predictor under spatial autocorrelation, yielding a finite-dimensional
-representation of the model. This provides a unified approach that
-combines the dimension-reduction advantages of classical functional
-partial least squares with explicit modeling of spatial dependence at
-the component extraction stage. The finite-sample performance of the
-proposed approach is evaluated through Monte Carlo simulations and an
-empirical application using weather data from the United Kingdom. The
-results show that the proposed approach consistently outperforms
-existing methods in terms of estimation and prediction accuracy,
-particularly under strong spatial dependence.
+representation of the model. The proposed approach provides a unified
+framework that combines the dimension-reduction advantages of classical
+functional partial least squares with explicit modeling of spatial
+dependence during component extraction. Its finite-sample performance is
+evaluated through Monte Carlo simulations and an empirical application
+using weather data from the United Kingdom. The results demonstrate that
+the proposed method consistently outperforms existing alternatives in
+terms of estimation and prediction accuracy, particularly under strong
+spatial dependence.
 
-Installation
+## Installation
 
-You can install the development version of SFPLSR from GitHub with:
+You can install the development version of **SFPLSR** directly from
+GitHub:
 
-R \# install.packages(“devtools”)
-devtools::install_github(“MugeMutis/SFPLSR”)
+    R > install.packages("devtools"); pak::pak("MugeMutis/SFPLSR")
 
-Main Functions & Workflow
+## Main Functions
 
-The core functionality of the SFPLSR package is centered around an
-end-to-end workflow for spatial functional data analysis, from data
-generation to model estimation and prediction:
+The package provides an end-to-end workflow for spatial functional data
+analysis, from data generation to model estimation and prediction.
 
-spatial_data_generation: Generates synthetic spatial functional data for
-simulation studies and framework validation. It constructs
-infinite-dimensional functional predictors paired with a scalar response
-variable, explicitly incorporating spatial autoregressive dependence and
-spatial autocorrelation structures based on a spatial weights matrix.
+# `spatial_data_generation()`
 
-sfplsr: Implements the core spatial functional partial least squares
-regression framework. This function performs spatial dimension reduction
-by extracting latent components that maximize the covariance between the
-scalar response and the functional covariates while accounting for
-spatial autocorrelation.
+Generates synthetic spatial functional data for simulation studies and
+methodological validation. The function constructs infinite-dimensional
+functional predictors together with a scalar response variable while
+explicitly incorporating spatial autoregressive dependence through a
+spatial weights matrix.
 
-predict_sfplsr: Computes out-of-sample predictions for the estimated
-spatial autoregressive functional partial least squares regression.
+# `sfplsr()`
 
-Datasets
+Implements the proposed Spatial Functional Partial Least Squares
+Regression (SFPLSR) framework. The method extracts latent components
+that maximize the covariance between the scalar response and the
+functional predictors while accounting for spatial autocorrelation.
 
-UK_weather_data: A comprehensive environmental and meteorological
+# `predict_sfplsr()`
+
+Computes out-of-sample predictions from a fitted SFPLSR model.
+
+## Dataset
+
+# `UK_weather_data`
+
+The package includes a real-world environmental and meteorological
 dataset compiled from the NASA Prediction Of Worldwide Energy Resources
-(POWER) project. It contains spatial and functional observations for 231
-meteorological stations homogeneously distributed across the United
-Kingdom. For each station, the dataset provides:
+(POWER) project.
 
-Spatial Attributes: Precise geographical coordinates (Latitude and
-Longitude) to construct spatial weights matrices and model spatial
-dependency.
+The dataset contains observations from 231 meteorological stations
+distributed across the United Kingdom and includes:
 
-Functional Covariates: Daily temperature trajectories (curves) captured
-over the years 2024 and 2025, representing the infinite-dimensional
-functional predictors.
+# Spatial Information
 
-Scalar Response: Surface shortwave downward flux (mean solar radiation)
-values for the years 2024 and 2025, serving as the scalar response
-variable in the spatial autoregressive scalar-on-function regression
-framework.
+- Latitude and longitude coordinates for each station.
+- Suitable for constructing spatial weights matrices and modeling
+  spatial dependence.
 
-Contact Muge Mutis - <muge.mutis@yildiz.edu.tr>
+# Functional Covariates
+
+- Daily temperature trajectories observed during 2024 and 2025.
+- Treated as infinite-dimensional functional predictors.
+
+# Scalar Response
+
+- Surface shortwave downward flux (mean solar radiation) measurements
+  for 2024 and 2025.
+- Used as the scalar response variable in the spatial autoregressive
+  scalar-on-function regression model.
+
+# References
+
+M. Mutis, U. Beyaztas, H. L. Shang (2026). *Spatial functional partial
+least squares regression*.
+
+# Contact
+
+Muge Mutis - <muge.mutis@yildiz.edu.tr>
