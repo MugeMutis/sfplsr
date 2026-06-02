@@ -1,5 +1,5 @@
 
-### SFPLSR
+# SFPLSR
 
 The **SFPLSR** package provides a comprehensive framework for spatial
 functional partial least squares regression. It is designed for modeling
@@ -37,7 +37,7 @@ GitHub:
 The package provides an end-to-end workflow for spatial functional data
 analysis, from data generation to model estimation and prediction.
 
-# `spatial_data_generation()`
+#### spatial_data_generation()
 
 Generates synthetic spatial functional data for simulation studies and
 methodological validation. The function constructs infinite-dimensional
@@ -45,20 +45,20 @@ functional predictors together with a scalar response variable while
 explicitly incorporating spatial autoregressive dependence through a
 spatial weights matrix.
 
-# `sfplsr()`
+#### sfplsr()
 
 Implements the proposed Spatial Functional Partial Least Squares
 Regression (SFPLSR) framework. The method extracts latent components
 that maximize the covariance between the scalar response and the
 functional predictors while accounting for spatial autocorrelation.
 
-# `predict_sfplsr()`
+#### predict_sfplsr()
 
 Computes out-of-sample predictions from a fitted SFPLSR model.
 
 ## Dataset
 
-# `UK_weather_data`
+#### UK_weather_data()
 
 The package includes a real-world environmental and meteorological
 dataset compiled from the NASA Prediction Of Worldwide Energy Resources
@@ -67,29 +67,23 @@ dataset compiled from the NASA Prediction Of Worldwide Energy Resources
 The dataset contains observations from 231 meteorological stations
 distributed across the United Kingdom and includes:
 
-# Spatial Information
+- Spatial Information: Latitude and longitude coordinates for each
+  station. Suitable for constructing spatial weights matrices and
+  modeling spatial dependence.
 
-- Latitude and longitude coordinates for each station.
-- Suitable for constructing spatial weights matrices and modeling
-  spatial dependence.
+- Functional Covariates: Daily temperature trajectories observed during
+  2024 and 2025. Treated as infinite-dimensional functional predictors.
 
-# Functional Covariates
+- Scalar Response: Surface shortwave downward flux (mean solar
+  radiation) measurements for 2024 and 2025. Used as the scalar response
+  variable in the spatial autoregressive scalar-on-function regression
+  model.
 
-- Daily temperature trajectories observed during 2024 and 2025.
-- Treated as infinite-dimensional functional predictors.
-
-# Scalar Response
-
-- Surface shortwave downward flux (mean solar radiation) measurements
-  for 2024 and 2025.
-- Used as the scalar response variable in the spatial autoregressive
-  scalar-on-function regression model.
-
-# References
+## References
 
 M. Mutis, U. Beyaztas, H. L. Shang (2026). *Spatial functional partial
 least squares regression*.
 
-# Contact
+## Contact
 
 Muge Mutis - <muge.mutis@yildiz.edu.tr>
